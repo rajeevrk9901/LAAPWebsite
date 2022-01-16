@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(#f8fafc, #a159e6);
+}
+
+header {
+  text-align: center;
+  font-size: 20px;
+  color: rgb(98, 0, 255);
+  padding: 8px 0;
+}
+
+nav {
+  font-family: "Poppins";
+  font-size: 21px;
+  // margin: 41px;
+}
+
+ul {
+  font-family: "Space Mono", monospace;
+  background-color: rgba(164, 193, 246, 0.39);
+  display: flex;
+  list-style-type: none;
+  gap: 12px;
+  justify-content: right;
+  position: relative;
+
+  li {
+    // background-color: rgba(164, 193, 246, 0.787);
+    border-radius: 2px;
+    border: rgb(162, 182, 71);
+    padding: 8px 5px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(127, 176, 255);
+      //   border: 2px solid red;
+      border-radius: 12px;
+    }
+  }
+
+  .rnva {
+    padding-left: 20px;
+    display: flex;
+    gap: 12px;
+    justify-content: right;
+  }
+}
+
+.logo {
+  padding-left: 20px;
+  position: absolute;
+  top: 50%;
+  // right: 12px;
+  -ms-transform: translateY(50%);
+  transform: translateY(-50%);
+}
+
+.logoham {
+  padding: 30px 0;
+  position: relative;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding-right: 12px;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  -ms-transform: translateY(50%);
+  transform: translateY(-50%);
+}
+
+.bar {
+  background-color: black;
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-item {
+    font-family: "Space Mono", monospace;
+    padding: 20px 0;
+    width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    display: none;
+    .rnva {
+      padding-left: 20px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+  }
+
+  ul.active {
+    display: block;
+    margin-top: 28px;
+    height: 100%;
+    padding: 12px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
